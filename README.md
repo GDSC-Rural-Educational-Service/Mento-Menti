@@ -1,6 +1,6 @@
 # GDSC 농촌 거주 학생들을 위한 교육서비스
 
-## 프로젝트 - 멘토 멘티 매칭 앱
+H3 프로젝트 - 멘토 멘티 매칭 앱
 
 ### 팀장
 * 권희석 : [HeeSeok-Kwon](https://github.com/HeeSeok-Kwon)
