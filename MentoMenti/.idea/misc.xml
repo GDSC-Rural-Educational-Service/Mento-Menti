@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/jhl81/OneDrive/MentoMenti/app/src/main/res/drawable/ic_chat.xml" value="0.378125" />
+        <entry key="..\:/Users/jhl81/OneDrive/MentoMenti/app/src/main/res/drawable/ic_setting.xml" value="0.21822916666666667" />
+        <entry key="..\:/Users/jhl81/OneDrive/MentoMenti/app/src/main/res/layout/activity_college.xml" value="0.21458333333333332" />
+        <entry key="..\:/Users/jhl81/OneDrive/MentoMenti/app/src/main/res/layout/activity_main.xml" value="0.3496376811594203" />
+        <entry key="..\:/Users/jhl81/OneDrive/MentoMenti/app/src/main/res/layout/fragment_chatting_page.xml" value="0.3496376811594203" />
+        <entry key="..\:/Users/jhl81/OneDrive/MentoMenti/app/src/main/res/layout/fragment_matching_page.xml" value="0.3496376811594203" />
+        <entry key="..\:/Users/jhl81/OneDrive/MentoMenti/app/src/main/res/layout/fragment_setting_page.xml" value="0.34739583333333335" />
+        <entry key="..\:/Users/jhl81/OneDrive/MentoMenti/app/src/main/res/layout/menu.xml" value="0.3496376811594203" />
+        <entry key="..\:/Users/jhl81/OneDrive/MentoMenti/app/src/main/res/menu/menu.xml" value="0.3619791666666667" />
+        <entry key="..\:/Users/jhl81/OneDrive/project_2-2/Mento-Menti/MentoMenti/app/src/main/res/drawable/btn_background.xml" value="0.21822916666666667" />
+        <entry key="..\:/Users/jhl81/OneDrive/project_2-2/Mento-Menti/MentoMenti/app/src/main/res/drawable/btn_unclicked.xml" value="0.21822916666666667" />
+        <entry key="..\:/Users/jhl81/OneDrive/project_2-2/Mento-Menti/MentoMenti/app/src/main/res/layout/activity_college.xml" value="0.20208333333333334" />
+        <entry key="..\:/Users/jhl81/OneDrive/project_2-2/Mento-Menti/MentoMenti/app/src/main/res/layout/activity_entrance.xml" value="0.20208333333333334" />
+        <entry key="..\:/Users/jhl81/OneDrive/project_2-2/Mento-Menti/MentoMenti/app/src/main/res/layout/activity_extrance.xml" value="0.20208333333333334" />
+        <entry key="..\:/Users/jhl81/OneDrive/project_2-2/Mento-Menti/MentoMenti/app/src/main/res/layout/activity_main.xml" value="0.20208333333333334" />
+        <entry key="..\:/Users/jhl81/OneDrive/project_2-2/Mento-Menti/MentoMenti/app/src/main/res/layout/activity_major.xml" value="0.20208333333333334" />
+        <entry key="..\:/Users/jhl81/OneDrive/project_2-2/Mento-Menti/MentoMenti/app/src/main/res/layout/fragment_chatting_page.xml" value="0.20208333333333334" />
+        <entry key="..\:/Users/jhl81/OneDrive/project_2-2/Mento-Menti/MentoMenti/app/src/main/res/layout/fragment_matching_page.xml" value="0.20208333333333334" />
+        <entry key="..\:/Users/jhl81/OneDrive/project_2-2/Mento-Menti/MentoMenti/app/src/main/res/menu/setting_detail.xml" value="0.20208333333333334" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
