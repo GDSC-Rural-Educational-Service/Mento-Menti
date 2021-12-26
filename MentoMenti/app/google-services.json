@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "6426850617",
+    "project_id": "kotlinconnect-315ea",
+    "storage_bucket": "kotlinconnect-315ea.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:6426850617:android:87239586f6a2356afc64e8",
+        "android_client_info": {
+          "package_name": "com.example.mentomenti"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "6426850617-tsoppo7e4u75p369fio344dp243kk3q2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.mentomenti",
+            "certificate_hash": "22721d990ad83b411521874bda0e53ea9d4fcbca"
+          }
+        },
+        {
+          "client_id": "6426850617-tikam3s1m38jtojnnotj018rs325kef7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBmf7vXqpotA9qL_j7zyLJNFK8qej5aZJQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "6426850617-tikam3s1m38jtojnnotj018rs325kef7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
