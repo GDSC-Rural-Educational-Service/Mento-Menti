@@ -2,7 +2,7 @@ package com.example.mentomenti
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
+import android.service.autofill.FieldClassification
 import androidx.fragment.app.Fragment
 import com.example.mentomenti.databinding.ActivityMainBinding
 
@@ -19,8 +19,8 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         var view = binding.root
         setContentView(view)
-
-        initNavigationBar();
+        changeFragment(MatchingPage)
+        initNavigationBar()
     }
 
     private fun initNavigationBar(){

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/rv_background">
+
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="이름 : "
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/profile_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="000"
+        app:layout_constraintStart_toEndOf="@+id/tv_name"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_college"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="학교 : "
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_name" />
+
+    <TextView
+        android:id="@+id/profile_college"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="부산대학교"
+        app:layout_constraintStart_toEndOf="@+id/tv_college"
+        app:layout_constraintTop_toBottomOf="@+id/profile_name" />
+
+    <TextView
+        android:id="@+id/tv_major"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="학과 : "
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_college" />
+
+    <TextView
+        android:id="@+id/profile_major"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="정보컴퓨터공학부"
+        app:layout_constraintStart_toEndOf="@+id/tv_major"
+        app:layout_constraintTop_toBottomOf="@+id/profile_college" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,7 +5,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.RecyclerView
 import com.example.mentomenti.R
+import com.example.mentomenti.matching.ProfileAdapter
+import com.example.mentomenti.matching.ProfileData
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -19,23 +22,37 @@ private const val ARG_PARAM2 = "param2"
  */
 class MatchingPage : Fragment() {
     // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    lateinit var profileAdapter : ProfileAdapter
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
     }
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_matching_page, container, false)
+        val v = inflater.inflate(R.layout.fragment_matching_page, container, false)
+        profileAdapter = ProfileAdapter(container?.context)
+        var profile = v.findViewById<RecyclerView>(R.id.rv_profile)
+        profile.adapter = profileAdapter
+        val datas = mutableListOf<ProfileData>()
+        datas.apply {
+            add(ProfileData(name = "김ㅇㅇ",college = "부산대학교" , major =  "정보컴퓨터공학부"))
+            add(ProfileData(name = "이ㅇㅇ",college = "부산대학교" , major =  "정보컴퓨터공학부"))
+            add(ProfileData(name = "박ㅇㅇ",college = "부산대학교" , major =  "정보컴퓨터공학부"))
+            add(ProfileData(name = "최ㅇㅇ",college = "부산대학교" , major =  "정보컴퓨터공학부"))
+            add(ProfileData(name = "변ㅇㅇ",college = "부산대학교" , major =  "정보컴퓨터공학부"))
+
+            profileAdapter.datas = datas
+            profileAdapter.notifyDataSetChanged()
+        }
+        profileAdapter.on
+
+
+        return v
     }
 
     companion object {
