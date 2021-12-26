@@ -5,7 +5,7 @@
 ### 팀장
 * 권희석 : [HeeSeok-Kwon](https://github.com/HeeSeok-Kwon)
 ### 팀원
-* 고원준
+* 고원준 : [KW1J](https://github.com/KW1J)
 * 이제호 : [jhl8109](https://github.com/jhl8109)
 * 황주원 : [woneee99](https://github.com/woneee99)
 
