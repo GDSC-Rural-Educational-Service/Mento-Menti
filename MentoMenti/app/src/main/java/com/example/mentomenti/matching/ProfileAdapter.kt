@@ -22,6 +22,9 @@ class ProfileAdapter(private val context : Context?) :
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bind(datas[position])
+        holder.itemView.setOnClickListener {
+            itemClickListener.onClick(it,position)
+        }
     }
 
     interface OnItemClickListener {
@@ -41,7 +44,6 @@ class ProfileAdapter(private val context : Context?) :
             name.text = item.name
             college.text = item.college
             major.text = item.major
-
 
         }
     }
