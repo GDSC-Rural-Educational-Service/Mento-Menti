@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.mentomenti">
-    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,17 +12,20 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MentoMenti">
         <activity
-            android:name=".setting.settingpage.EntranceActivity"
-            android:parentActivityName=".MainActivity"
+            android:name=".SignUpActivity"
             android:exported="true" />
+        <activity
+            android:name=".setting.settingpage.EntranceActivity"
+            android:exported="true"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".setting.settingpage.MajorActivity"
-            android:parentActivityName=".MainActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".setting.settingpage.CollegeActivity"
-            android:parentActivityName=".MainActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
