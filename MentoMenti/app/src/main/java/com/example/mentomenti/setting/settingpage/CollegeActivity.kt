@@ -8,8 +8,12 @@ import android.view.MenuItem
 import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
 import com.example.mentomenti.R
+import com.google.firebase.firestore.FirebaseFirestore
 
 class CollegeActivity : AppCompatActivity() {
+
+    private lateinit var fbFirestore : FirebaseFirestore
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_college)
@@ -18,10 +22,13 @@ class CollegeActivity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_back)
 
+        fbFirestore = FirebaseFirestore.getInstance()
+
         val input1 = findViewById<EditText>(R.id.et_major)
         var imm : InputMethodManager = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
         imm.showSoftInput(input1,0)
         input1.requestFocus()
+
 
     }
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

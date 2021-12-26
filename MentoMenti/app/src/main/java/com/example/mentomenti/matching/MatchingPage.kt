@@ -1,12 +1,17 @@
 package com.example.mentomenti.setting
 
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.Window
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mentomenti.R
+import com.example.mentomenti.matching.CustomDialog
 import com.example.mentomenti.matching.ProfileAdapter
 import com.example.mentomenti.matching.ProfileData
 
@@ -47,10 +52,15 @@ class MatchingPage : Fragment() {
             add(ProfileData(name = "변ㅇㅇ",college = "부산대학교" , major =  "정보컴퓨터공학부"))
 
             profileAdapter.datas = datas
-            profileAdapter.notifyDataSetChanged()
         }
-        profileAdapter.on
-
+        profileAdapter.setItemClickListener(object: ProfileAdapter.OnItemClickListener{
+            override fun onClick(v: View, position: Int) {
+                var dialog: CustomDialog? = CustomDialog(context!!);
+                dialog!!.start("매칭 여부를 선택하세요")
+                Log.e("check", "okay")
+            }
+        })
+        profileAdapter.notifyDataSetChanged()
 
         return v
     }
