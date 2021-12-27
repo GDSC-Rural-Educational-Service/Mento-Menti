@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
 
     private var auth : FirebaseAuth? = null
 
-    private val MatchingPage : Fragment by lazy { com.example.mentomenti.setting.MatchingPage() }
+    private val MatchingPage : Fragment by lazy { com.example.mentomenti.matching.MatchingPage() }
     private val ChattingPage : Fragment by lazy { com.example.mentomenti.setting.ChattingPage() }
     private val SettingPage : Fragment by lazy { com.example.mentomenti.setting.SettingPage() }
 
