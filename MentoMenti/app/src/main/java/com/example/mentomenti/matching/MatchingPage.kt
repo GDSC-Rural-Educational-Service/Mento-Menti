@@ -14,6 +14,7 @@ import com.example.mentomenti.R
 import com.example.mentomenti.matching.CustomDialog
 import com.example.mentomenti.matching.ProfileAdapter
 import com.example.mentomenti.matching.ProfileData
+import com.google.firebase.firestore.FirebaseFirestore
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -40,26 +41,36 @@ class MatchingPage : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val v = inflater.inflate(R.layout.fragment_matching_page, container, false)
+
+        val db = FirebaseFirestore.getInstance()
+
         profileAdapter = ProfileAdapter(container?.context)
         var profile = v.findViewById<RecyclerView>(R.id.rv_profile)
         profile.adapter = profileAdapter
         val datas = mutableListOf<ProfileData>()
-        datas.apply {
-            add(ProfileData(name = "김ㅇㅇ",college = "부산대학교" , major =  "정보컴퓨터공학부"))
-            add(ProfileData(name = "이ㅇㅇ",college = "부산대학교" , major =  "정보컴퓨터공학부"))
-            add(ProfileData(name = "박ㅇㅇ",college = "부산대학교" , major =  "정보컴퓨터공학부"))
-            add(ProfileData(name = "최ㅇㅇ",college = "부산대학교" , major =  "정보컴퓨터공학부"))
-            add(ProfileData(name = "변ㅇㅇ",college = "부산대학교" , major =  "정보컴퓨터공학부"))
+        profileAdapter.datas = datas
+        db.collection("mentoinfo")
+            .get()
+            .addOnSuccessListener { result ->
+                datas.clear()
+                for (document in result) {
+                    val item = ProfileData(document["name"] as String,document["college"]as String,document["major"]as String)
+                    datas.add(item)
+                    profileAdapter.notifyDataSetChanged()
+                }
+            }
+            .addOnFailureListener {exception->
+                Log.e("failed", "Error getting documents: $exception")
+            }
 
-            profileAdapter.datas = datas
-        }
+
         profileAdapter.setItemClickListener(object: ProfileAdapter.OnItemClickListener{
             override fun onClick(v: View, position: Int) {
                 var dialog: CustomDialog? = CustomDialog(context!!);
                 dialog!!.start("매칭 여부를 선택하세요")
-                Log.e("check", "okay")
             }
         })
+
         profileAdapter.notifyDataSetChanged()
 
         return v
