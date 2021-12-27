@@ -1,4 +1,4 @@
-package com.example.mentomenti
+package com.example.mentomenti.setting
 
 import android.graphics.Color
 import android.view.LayoutInflater
@@ -7,9 +7,11 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.mentomenti.ChatLayout
+import com.example.mentomenti.R
 
 class ChatAdapter(val currentUser: String, val itemList: ArrayList<ChatLayout>): RecyclerView.Adapter<ChatAdapter.ViewHolder>() {
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ChatAdapter.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.chat_layout, parent, false)
         return ViewHolder(view)
     }
@@ -18,7 +20,7 @@ class ChatAdapter(val currentUser: String, val itemList: ArrayList<ChatLayout>):
         return itemList.size
     }
 
-    override fun onBindViewHolder(holder: ChatAdapter.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         // 현재 닉네임과 글쓴이의 닉네임이 같을 경우 배경을 노란색으로 변경
         if (currentUser == itemList[position].nickname) {
             holder.card.setCardBackgroundColor(Color.parseColor("#FFF176"))
