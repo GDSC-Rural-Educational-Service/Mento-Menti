@@ -10,25 +10,67 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="65dp"
-        android:text="회원가입"
+        android:layout_marginBottom="50dp"
+        android:text="회원 가입"
         android:textSize="30sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/join_role"
+        app:layout_constraintBottom_toTopOf="@+id/join_email"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/join_role"
+        android:id="@+id/join_email"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginBottom="24dp"
+        android:ems="10"
+        android:hint="이메일"
+        android:inputType="textEmailAddress"
+        app:layout_constraintBottom_toTopOf="@+id/join_password"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/join_password"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginBottom="24dp"
+        android:ems="10"
+        android:hint="비밀번호"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toTopOf="@+id/radioGroup2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp"
-        android:ems="10"
-        android:hint="멘토/멘티"
-        android:inputType="textPersonName"
+        android:orientation="horizontal"
+        android:background="@drawable/btn_background"
         app:layout_constraintBottom_toTopOf="@+id/join_name"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent">
+
+        <RadioButton
+            android:id="@+id/join_mento"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:text="멘토" />
+
+        <RadioButton
+            android:id="@+id/join_menti"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:text="멘티" />
+    </RadioGroup>
+
 
     <EditText
         android:id="@+id/join_college"
@@ -41,53 +83,67 @@
         app:layout_constraintBottom_toTopOf="@+id/join_major"
         app:layout_constraintStart_toStartOf="@+id/join_name" />
 
-    <EditText
-        android:id="@+id/join_way"
+    <RadioGroup
+        android:id="@+id/radioGroup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:layout_marginBottom="220dp"
-        android:ems="10"
-        android:hint="수시/정시"
-        android:inputType="textPassword"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/join_college"
-        app:layout_constraintTop_toBottomOf="@+id/join_major" />
+        android:orientation="horizontal"
+        android:background="@drawable/btn_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/join_major">
+
+        <RadioButton
+            android:id="@+id/join_susi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:text="수시" />
+
+        <RadioButton
+            android:id="@+id/join_jeongsi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:text="정시" />
+    </RadioGroup>
 
     <EditText
         android:id="@+id/join_major"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="280dp"
+        android:layout_marginBottom="212dp"
         android:ems="10"
         android:hint="학과"
-        android:inputType="textPassword"
+        android:inputType="text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="@+id/join_college" />
 
     <EditText
         android:id="@+id/join_name"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:layout_marginBottom="24dp"
         android:ems="10"
         android:hint="이름"
-        android:inputType="textEmailAddress"
+        android:inputType="text"
         app:layout_constraintBottom_toTopOf="@+id/join_college"
-        app:layout_constraintStart_toStartOf="@+id/join_role" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/join_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="108dp"
-        android:paddingVertical="20dp"
+        android:layout_marginTop="40dp"
         android:backgroundTint="#68A9C6"
         android:paddingHorizontal="100dp"
+        android:paddingVertical="20dp"
         android:text="가입"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/join_way" />
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
