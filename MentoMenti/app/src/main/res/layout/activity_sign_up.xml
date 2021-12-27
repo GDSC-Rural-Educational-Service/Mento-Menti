@@ -10,13 +10,12 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="50dp"
+        android:layout_marginBottom="20dp"
         android:text="회원 가입"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/join_email"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
@@ -40,13 +39,13 @@
         android:ems="10"
         android:hint="비밀번호"
         android:inputType="textPassword"
-        app:layout_constraintBottom_toTopOf="@+id/radioGroup2"
+        app:layout_constraintBottom_toTopOf="@+id/join_role"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent" />
 
     <RadioGroup
-        android:id="@+id/radioGroup2"
+        android:id="@+id/join_role"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp"
@@ -61,7 +60,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:text="멘토" />
+            android:text="멘토"
+            android:checked="true"/>
 
         <RadioButton
             android:id="@+id/join_menti"
@@ -79,12 +79,12 @@
         android:layout_marginBottom="24dp"
         android:ems="10"
         android:hint="대학"
-        android:inputType="textPassword"
+        android:inputType="text"
         app:layout_constraintBottom_toTopOf="@+id/join_major"
         app:layout_constraintStart_toStartOf="@+id/join_name" />
 
     <RadioGroup
-        android:id="@+id/radioGroup"
+        android:id="@+id/join_way"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
@@ -99,6 +99,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:checked="true"
             android:text="수시" />
 
         <RadioButton
@@ -113,7 +114,7 @@
         android:id="@+id/join_major"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="212dp"
+        android:layout_marginBottom="188dp"
         android:ems="10"
         android:hint="학과"
         android:inputType="text"
@@ -143,7 +144,7 @@
         android:text="가입"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+        app:layout_constraintTop_toBottomOf="@+id/join_way" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
