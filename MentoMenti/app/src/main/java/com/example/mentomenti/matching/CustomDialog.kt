@@ -24,13 +24,14 @@ class CustomDialog(context: Context) : AppCompatActivity() {
 
         dialog.setContentView(R.layout.matching_dialog)
         body = dialog.findViewById(R.id.body)
-        body.setText(bodyMessage)
+        body.text = bodyMessage
 
         confirm = dialog.findViewById(R.id.Confirm)
         cancel = dialog.findViewById(R.id.cancel)
 
         cancel.setOnClickListener{ //취소버튼
             dialog.dismiss()
+
         }
 
         confirm.setOnClickListener { //확인버튼
