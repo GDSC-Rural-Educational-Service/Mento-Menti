@@ -30,6 +30,8 @@
         <entry key="..\:/Users/jhl81/OneDrive/project_2-2/Mento-Menti/MentoMenti/app/src/main/res/layout/profile_item.xml" value="0.5" />
         <entry key="..\:/Users/jhl81/OneDrive/project_2-2/Mento-Menti/MentoMenti/app/src/main/res/menu/setting_detail.xml" value="0.20208333333333334" />
         <entry key="..\:/Users/jhl81/OneDrive/project_2-2/Mento-Menti/MentoMenti/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.21822916666666667" />
+        <entry key="..\:/Users/rnjs1/StudioProjects/Mento-Menti/MentoMenti/app/src/main/res/drawable/ic_account_circle_white_24dp.xml" value="0.378125" />
+        <entry key="..\:/Users/rnjs1/StudioProjects/Mento-Menti/MentoMenti/app/src/main/res/drawable/ic_exit_to_app_white_24dp.xml" value="0.378125" />
         <entry key="..\:/Users/rnjs1/StudioProjects/Mento-Menti/MentoMenti/app/src/main/res/drawable/rv_background.xml" value="0.378125" />
         <entry key="..\:/Users/rnjs1/StudioProjects/Mento-Menti/MentoMenti/app/src/main/res/layout/activity_college.xml" value="0.3619791666666667" />
         <entry key="..\:/Users/rnjs1/StudioProjects/Mento-Menti/MentoMenti/app/src/main/res/layout/activity_entrance.xml" value="0.3619791666666667" />
@@ -37,6 +39,7 @@
         <entry key="..\:/Users/rnjs1/StudioProjects/Mento-Menti/MentoMenti/app/src/main/res/layout/activity_major.xml" value="0.3619791666666667" />
         <entry key="..\:/Users/rnjs1/StudioProjects/Mento-Menti/MentoMenti/app/src/main/res/layout/activity_signin.xml" value="0.1" />
         <entry key="..\:/Users/rnjs1/StudioProjects/Mento-Menti/MentoMenti/app/src/main/res/layout/profile_item.xml" value="0.3619791666666667" />
+        <entry key="..\:/Users/rnjs1/StudioProjects/Mento-Menti/MentoMenti/app/src/main/res/menu/main_menu.xml" value="0.3619791666666667" />
         <entry key="..\:/Users/rnjs1/StudioProjects/Mento-Menti/MentoMenti/app/src/main/res/menu/menu.xml" value="0.3619791666666667" />
         <entry key="..\:/Users/rnjs1/StudioProjects/Mento-Menti/MentoMenti/app/src/main/res/menu/setting_detail.xml" value="0.3619791666666667" />
         <entry key="..\:/Users/wonee/AndroidStudioProjects/Mento-Menti/MentoMenti/app/src/main/res/layout/activity_chatmain.xml" value="0.1" />
@@ -48,5 +51,5 @@
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Embedded JDK" project-jdk-type="JavaSDK" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK" />
 </project>
