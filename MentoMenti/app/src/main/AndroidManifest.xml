@@ -28,7 +28,6 @@
             android:name=".setting.settingpage.CollegeActivity"
             android:exported="true"
             android:parentActivityName=".MainActivity" />
-
         <activity
             android:name=".MainActivity"
             android:exported="true">

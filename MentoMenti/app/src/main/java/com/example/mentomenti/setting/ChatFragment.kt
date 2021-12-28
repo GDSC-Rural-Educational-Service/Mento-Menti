@@ -9,6 +9,7 @@ import android.widget.Toast
 import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.mentomenti.ChatLayout
 
 import com.google.firebase.firestore.DocumentChange
 import com.google.firebase.firestore.FirebaseFirestore
@@ -20,7 +21,7 @@ import java.util.*
 import com.example.mentomenti.databinding.FragmentChatBinding
 import com.google.firebase.Timestamp
 
-class ChattingPage : Fragment() {
+class ChatFragment : Fragment() {
     private var _binding: FragmentChatBinding? = null
     private val binding get() = _binding!!
 
@@ -41,7 +42,7 @@ class ChattingPage : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding = FragmentChatBinding.inflate(inflater, container, false)
         val view = binding.root
-        //Toast.makeText(context, "현재 닉네임은 ${currentUser}입니다.", Toast.LENGTH_SHORT).show()
+        Toast.makeText(context, "현재 닉네임은 ${currentUser}입니다.", Toast.LENGTH_SHORT).show()
 
         // 리사이클러 뷰 설정
         binding.rvList.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
@@ -118,6 +119,7 @@ class ChattingPage : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         registration.remove()
-        _binding = null //메모리 누수 막기 위함
+        _binding = null
     }
+
 }

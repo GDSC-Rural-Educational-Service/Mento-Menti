@@ -1,8 +1,10 @@
 package com.example.mentomenti
 
+import android.content.ContentValues.TAG
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
@@ -70,6 +72,7 @@ class SignInActivity : AppCompatActivity() {
     fun moveMainPage(user: FirebaseUser?){
         if( user!= null){
             startActivity(Intent(this,MainActivity::class.java))
+            Log.d(TAG, "mm"+ user.toString())
             finish()
         }
     }

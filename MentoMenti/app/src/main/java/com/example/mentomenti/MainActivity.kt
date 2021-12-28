@@ -1,6 +1,6 @@
 package com.example.mentomenti
 
-import android.content.ContentValues.TAG
+import android.content.ContentValues
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
     private var auth : FirebaseAuth? = null
 
     private val MatchingPage : Fragment by lazy { com.example.mentomenti.matching.MatchingPage() }
-    private val ChattingPage : Fragment by lazy { com.example.mentomenti.setting.ChattingPage() }
+    private val ChattingPage : Fragment by lazy { com.example.mentomenti.setting.ChatFragment() }
 
     private val SettingPage : Fragment by lazy { com.example.mentomenti.setting.SettingPage() }
 
@@ -24,6 +24,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         auth = Firebase.auth
+        Log.d(ContentValues.TAG, "kk"+ auth.toString())
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         var view = binding.root
@@ -60,8 +61,8 @@ class MainActivity : AppCompatActivity() {
                         changeFragment(MatchingPage)
                     }
                     R.id.chatting -> {
-                        Log.d(TAG,"dkdk")
                         changeFragment(ChattingPage)
+
                     }
                     R.id.setting -> {
                         changeFragment(SettingPage)
