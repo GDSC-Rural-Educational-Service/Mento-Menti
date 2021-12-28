@@ -3,7 +3,6 @@ package com.example.mentomenti
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.service.autofill.FieldClassification
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.example.mentomenti.databinding.ActivityMainBinding
@@ -12,11 +11,11 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 
 class MainActivity : AppCompatActivity() {
-
     private var auth : FirebaseAuth? = null
 
     private val MatchingPage : Fragment by lazy { com.example.mentomenti.matching.MatchingPage() }
     private val ChattingPage : Fragment by lazy { com.example.mentomenti.setting.ChattingPage() }
+
     private val SettingPage : Fragment by lazy { com.example.mentomenti.setting.SettingPage() }
 
     private lateinit var binding : ActivityMainBinding;
@@ -33,6 +32,7 @@ class MainActivity : AppCompatActivity() {
         var editor = preferences.edit()
         var firstViewShow : Boolean = preferences.getBoolean("first", false)
         val logoutTextView: TextView = findViewById(R.id.logoutTextView)
+
 
         if (!firstViewShow) {
              editor.putBoolean("first",true).apply()
