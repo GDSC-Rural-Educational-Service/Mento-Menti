@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.mentomenti.ChatLayout
@@ -118,7 +119,6 @@ class ChatFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         registration.remove()
-        _binding = null
+        _binding = null //메모리 누수 막기 위함
     }
-
 }
