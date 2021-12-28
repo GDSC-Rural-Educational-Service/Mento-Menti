@@ -9,7 +9,7 @@
 * 이제호 : [jhl8109](https://github.com/jhl8109)
 * 황주원 : [woneee99](https://github.com/woneee99)
 
-#### 게발 방식
+#### 개발 방식
 모르는 부분, 오류 등 slack으로 공유
 
 중간중간 미팅이 필요하다고 판단되면 시간 약속 잡아서 비대면 미팅
