@@ -8,7 +8,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mentomenti.R
-import com.example.mentomenti.setting.MatchingPage
+import com.example.mentomenti.matching.MatchingPage
 
 class ProfileAdapter(private val context : Context?) :
     RecyclerView.Adapter<ProfileAdapter.ViewHolder>(){

@@ -39,6 +39,7 @@ class CollegeActivity : AppCompatActivity() {
         // Handle presses on the action bar items
         when(item.itemId){
             R.id.fixActionBtn -> {
+
                 finish()
             }}
         return super.onOptionsItemSelected(item)
