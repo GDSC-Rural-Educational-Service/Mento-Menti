@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.mentomenti.ChatLayout
 import com.example.mentomenti.R
 
 class ChatAdapter(val currentUser: String, val itemList: ArrayList<ChatLayout>): RecyclerView.Adapter<ChatAdapter.ViewHolder>() {

@@ -1,8 +1,10 @@
 package com.example.mentomenti
 
+import android.content.ContentValues.TAG
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.example.mentomenti.databinding.ActivityMainBinding
@@ -58,6 +60,7 @@ class MainActivity : AppCompatActivity() {
                         changeFragment(MatchingPage)
                     }
                     R.id.chatting -> {
+                        Log.d(TAG,"dkdk")
                         changeFragment(ChattingPage)
                     }
                     R.id.setting -> {
