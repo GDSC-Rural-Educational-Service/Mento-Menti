@@ -1,7 +1,5 @@
 package com.example.mentomenti.setting
 
-import android.content.ContentValues
-import android.content.ContentValues.TAG
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -41,17 +39,12 @@ class ChatFragment : Fragment() {
         auth = Firebase.auth
         super.onCreate(savedInstanceState)
 
-        if (auth?.currentUser != null) {
-            Log.d(ContentValues.TAG,"dhkt"+ auth?.currentUser!!.email);
-        }
         currentUser = auth?.currentUser!!.email.toString()
-        Log.d(TAG, currentUser)
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding = FragmentChatBinding.inflate(inflater, container, false)
         val view = binding.root
-        //Toast.makeText(context, "현재 닉네임은 ${currentUser}입니다.", Toast.LENGTH_SHORT).show()
 
         // 리사이클러 뷰 설정
         binding.rvList.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
@@ -87,7 +80,6 @@ class ChatFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        chatList.add(ChatLayout("알림", "$currentUser 닉네임으로 입장했습니다.", "")) //구현 끝나면 삭제
         val enterTime = Date(System.currentTimeMillis())
 
         registration = db.collection("Chat")

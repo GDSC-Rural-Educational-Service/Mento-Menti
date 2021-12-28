@@ -17,7 +17,6 @@ import com.google.firebase.ktx.Firebase
 
 class SignInActivity : AppCompatActivity() {
     private var auth : FirebaseAuth? = null
-    var em : String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -58,7 +57,6 @@ class SignInActivity : AppCompatActivity() {
                             baseContext, "로그인에 성공 하였습니다.",
                             Toast.LENGTH_SHORT
                         ).show()
-                        em = email
                         moveMainPage(auth?.currentUser)
                     } else {
                         Toast.makeText(
@@ -75,8 +73,6 @@ class SignInActivity : AppCompatActivity() {
     fun moveMainPage(user: FirebaseUser?){
         if( user!= null){
             val intent = Intent(this,MainActivity::class.java)
-
-            intent.putExtra("nickname" , em)
             startActivity(intent)
             finish()
         }

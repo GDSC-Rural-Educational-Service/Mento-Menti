@@ -1,10 +1,8 @@
 package com.example.mentomenti
 
-import android.content.ContentValues
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.example.mentomenti.databinding.ActivityMainBinding
@@ -24,12 +22,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         auth = Firebase.auth
-        Log.d(ContentValues.TAG, "kk"+ auth.toString())
-        val id = intent.getStringExtra("nickname")
 
-        if (auth?.currentUser != null) {
-            Log.d(ContentValues.TAG,"dhkt"+ auth?.currentUser!!.email);
-        }
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         var view = binding.root
@@ -67,9 +60,6 @@ class MainActivity : AppCompatActivity() {
                     }
                     R.id.chatting -> {
                         changeFragment(ChattingPage)
-                        if (id != null) {
-
-                        }
                     }
                     R.id.setting -> {
                         changeFragment(SettingPage)
@@ -84,7 +74,6 @@ class MainActivity : AppCompatActivity() {
             .beginTransaction()
             .replace(R.id.fl_container,fragment)
             .commit()
-        Log.d(ContentValues.TAG, "plz")
     }
 
 }
