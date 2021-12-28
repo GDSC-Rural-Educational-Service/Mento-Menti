@@ -1,5 +1,7 @@
 package com.example.mentomenti.setting
 
+import android.content.ContentValues
+import android.content.ContentValues.TAG
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -20,8 +22,12 @@ import java.util.*
 
 import com.example.mentomenti.databinding.FragmentChatBinding
 import com.google.firebase.Timestamp
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 
 class ChatFragment : Fragment() {
+    private var auth : FirebaseAuth? = null
     private var _binding: FragmentChatBinding? = null
     private val binding get() = _binding!!
 
@@ -32,17 +38,20 @@ class ChatFragment : Fragment() {
     private lateinit var adapter: ChatAdapter   // 리사이클러 뷰 어댑터
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        auth = Firebase.auth
         super.onCreate(savedInstanceState)
-        // LoginFragment 에서 입력한 닉네임을 가져옴
-        arguments?.let {
-            currentUser = it.getString("nickname").toString()
+
+        if (auth?.currentUser != null) {
+            Log.d(ContentValues.TAG,"dhkt"+ auth?.currentUser!!.email);
         }
+        currentUser = auth?.currentUser!!.email.toString()
+        Log.d(TAG, currentUser)
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding = FragmentChatBinding.inflate(inflater, container, false)
         val view = binding.root
-        Toast.makeText(context, "현재 닉네임은 ${currentUser}입니다.", Toast.LENGTH_SHORT).show()
+        //Toast.makeText(context, "현재 닉네임은 ${currentUser}입니다.", Toast.LENGTH_SHORT).show()
 
         // 리사이클러 뷰 설정
         binding.rvList.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
