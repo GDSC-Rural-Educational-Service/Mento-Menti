@@ -49,7 +49,13 @@ class CollegeActivity : AppCompatActivity() {
         map["college"] = input1.text.toString()
         when(item.itemId){
             R.id.fixActionBtn -> {
-                db.collection("mentoinfo").document(currentUser).update(map)
+                var me = db.collection("mentoinfo").document(currentUser)
+                if(me != null){
+                    db.collection("mentoinfo").document(currentUser).update(map)
+                }
+                else{
+                    db.collection("mentiinfo").document(currentUser).update(map)
+                }
                 finish()
             }}
         return super.onOptionsItemSelected(item)
