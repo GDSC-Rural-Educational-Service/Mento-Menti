@@ -5,6 +5,7 @@ import android.nfc.Tag
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.Menu
 import android.widget.Button
 import android.widget.EditText
 import android.widget.RadioButton
@@ -16,6 +17,10 @@ class SignUpActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_up)
+
+        supportActionBar?.title = "회원가입"
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_back)
 
         val db = Firebase.firestore
 
@@ -91,5 +96,9 @@ class SignUpActivity : AppCompatActivity() {
 
             startActivity(Intent(this, SignInActivity::class.java))
         }
+    }
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
 }

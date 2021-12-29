@@ -93,11 +93,11 @@ class MainActivity : AppCompatActivity() {
             }
             R.id.menu_logout -> {
                 //로그아웃 버튼 눌렀을 때
+                auth?.signOut()
                 // 로그인 화면으로
                 val intent = Intent(this, SignInActivity::class.java)
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
                 startActivity(intent)
-                auth?.signOut()
                 return super.onOptionsItemSelected(item)
             }
             else -> return super.onOptionsItemSelected(item)

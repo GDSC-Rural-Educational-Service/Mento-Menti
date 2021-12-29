@@ -21,6 +21,7 @@ class SignInActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_signin)
+        supportActionBar?.title = "로그인"
         auth = Firebase.auth
 
         val idEditText: EditText = findViewById(R.id.idEditText)
