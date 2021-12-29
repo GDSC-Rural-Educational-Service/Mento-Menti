@@ -8,16 +8,18 @@ import android.view.Window
 import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.FragmentTransaction
 import com.example.mentomenti.R
+import com.example.mentomenti.setting.ChatFragment
 
 class CustomDialog(context: Context) : AppCompatActivity() {
-
+    private lateinit var fragmentManager: FragmentTransaction
     private val dialog = Dialog(context)
     private lateinit var body : TextView
     private lateinit var confirm : Button
     private lateinit var cancel : Button
     val TAG = "로그 "
-
+    val chatfragment = ChatFragment()
     fun start(bodyMessage : String) {
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE)
         dialog.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT)) //여백을 제거함( 이부분은 주석처리하고 어떻게 다이얼로그가 생성되는지 보는게 이해하는게 가장 빠름) ex) TRANSPARENT값은 투명함.
@@ -31,7 +33,6 @@ class CustomDialog(context: Context) : AppCompatActivity() {
 
         cancel.setOnClickListener{ //취소버튼
             dialog.dismiss()
-
         }
 
         confirm.setOnClickListener { //확인버튼
