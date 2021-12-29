@@ -4,7 +4,12 @@ import android.content.ContentValues
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+
 import android.util.Log
+
+import android.view.Menu
+import android.view.MenuItem
+
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.example.mentomenti.databinding.ActivityMainBinding
@@ -36,22 +41,12 @@ class MainActivity : AppCompatActivity() {
         val preferences = getSharedPreferences("firstCheck", MODE_PRIVATE)
         var editor = preferences.edit()
         var firstViewShow : Boolean = preferences.getBoolean("first", false)
-        val logoutTextView: TextView = findViewById(R.id.logoutTextView)
 
 
         if (!firstViewShow) {
              editor.putBoolean("first",true).apply()
             var firstIntent = Intent(applicationContext, SignInActivity::class.java)
             startActivity(firstIntent)
-        }
-
-        // 로그아웃
-        logoutTextView.setOnClickListener {
-            // 로그인 화면으로
-            val intent = Intent(this, SignInActivity::class.java)
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
-            startActivity(intent)
-            auth?.signOut()
         }
     }
 
@@ -80,4 +75,32 @@ class MainActivity : AppCompatActivity() {
             .commit()
     }
 
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.main_menu, menu)
+        return true
+    }
+
+    //액션버튼 클릭 했을 때
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item?.itemId){
+            R.id.action_search -> {
+                //검색 버튼 눌렀을 때
+                return super.onOptionsItemSelected(item)
+            }
+            R.id.menu_account -> {
+                //계정 버튼 눌렀을 때
+                return super.onOptionsItemSelected(item)
+            }
+            R.id.menu_logout -> {
+                //로그아웃 버튼 눌렀을 때
+                // 로그인 화면으로
+                val intent = Intent(this, SignInActivity::class.java)
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+                startActivity(intent)
+                auth?.signOut()
+                return super.onOptionsItemSelected(item)
+            }
+            else -> return super.onOptionsItemSelected(item)
+        }
+    }
 }
