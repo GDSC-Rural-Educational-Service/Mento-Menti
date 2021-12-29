@@ -68,6 +68,7 @@ class MatchingPage : Fragment() {
             override fun onClick(v: View, position: Int) {
                 var dialog: CustomDialog? = CustomDialog(context!!);
                 dialog!!.start("매칭 여부를 선택하세요")
+
             }
         })
 

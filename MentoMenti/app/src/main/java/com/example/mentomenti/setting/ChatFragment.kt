@@ -1,5 +1,6 @@
 package com.example.mentomenti.setting
 
+import android.content.ContentValues
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -39,6 +40,9 @@ class ChatFragment : Fragment() {
         auth = Firebase.auth
         super.onCreate(savedInstanceState)
 
+        if (auth?.currentUser != null) {
+            Log.d(ContentValues.TAG,"dhkt"+ auth?.currentUser!!.email);
+        }
         currentUser = auth?.currentUser!!.email.toString()
     }
 

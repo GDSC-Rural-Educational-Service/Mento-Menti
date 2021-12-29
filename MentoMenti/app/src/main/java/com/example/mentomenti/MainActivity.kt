@@ -1,10 +1,15 @@
 package com.example.mentomenti
 
+import android.content.ContentValues
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+
+import android.util.Log
+
 import android.view.Menu
 import android.view.MenuItem
+
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.example.mentomenti.databinding.ActivityMainBinding
@@ -24,7 +29,9 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         auth = Firebase.auth
-
+        if (auth?.currentUser != null) {
+            Log.d(ContentValues.TAG,"dhkt"+ auth?.currentUser!!.email);
+        }
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         var view = binding.root
