@@ -12,10 +12,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MentoMenti">
         android:name="androidx.multidex.MultiDexApplication"
-        <activity android:name=".SignInActivity" />
+        <activity android:name=".SignInActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".SignUpActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:windowSoftInputMode="adjustPan"/>
         <activity
             android:name=".setting.settingpage.EntranceActivity"
             android:exported="true"
@@ -30,12 +37,8 @@
             android:parentActivityName=".MainActivity" />
         <activity
             android:name=".MainActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            android:exported="true"
+            android:windowSoftInputMode="adjustPan">
         </activity>
     </application>
 

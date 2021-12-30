@@ -5,17 +5,23 @@ import android.nfc.Tag
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.widget.Button
-import android.widget.EditText
-import android.widget.RadioButton
-import android.widget.RadioGroup
+import android.view.Menu
+import android.widget.*
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
 
 class SignUpActivity : AppCompatActivity() {
+    private var auth : FirebaseAuth? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        auth = Firebase.auth
         setContentView(R.layout.activity_sign_up)
+
+        supportActionBar?.title = "회원가입"
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_back)
 
         val db = Firebase.firestore
 
@@ -31,9 +37,10 @@ class SignUpActivity : AppCompatActivity() {
 
 
         val join_btn = findViewById<Button>(R.id.join_button)
-        join_btn.setOnClickListener {
 
-            // +로그인 정보 저장하는 로직 추가해야함
+        join_btn.setOnClickListener {
+            // +로그인 정보 저장
+            createAccount(email.text.toString(), password.text.toString())
             // + Hashmap 미숙해서 반복되는 코드가 많음
             if (role.checkedRadioButtonId == R.id.join_mento) {
                 if (way.checkedRadioButtonId == R.id.join_susi) {
@@ -90,6 +97,30 @@ class SignUpActivity : AppCompatActivity() {
             }
 
             startActivity(Intent(this, SignInActivity::class.java))
+        }
+    }
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
+    }
+    private fun createAccount(email: String, password: String) {
+        // +로그인 정보 저장
+        if (email.isNotEmpty() && password.isNotEmpty()) {
+            auth?.createUserWithEmailAndPassword(email, password)
+                ?.addOnCompleteListener(this) { task ->
+                    if (task.isSuccessful) {
+                        Toast.makeText(
+                            this, "계정 생성 완료.",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                        finish() // 가입창 종료
+                    } else {
+                        Toast.makeText(
+                            this, "계정 생성 실패",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    }
+                }
         }
     }
 }

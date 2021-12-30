@@ -16,7 +16,8 @@
         android:inputType="textEmailAddress"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        android:background="@drawable/edittext_rounded_corner_rectangle"/>
 
     <EditText
         android:id="@+id/passwordEditText"
@@ -29,7 +30,8 @@
         android:inputType="textPassword"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/idEditText"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        android:background="@drawable/edittext_rounded_corner_rectangle"/>
 
     <Button
         android:id="@+id/loginButton"
@@ -38,6 +40,7 @@
         android:layout_marginStart="64dp"
         android:layout_marginTop="28dp"
         android:text="로그인"
+        android:backgroundTint="#68A9C6"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/passwordEditText"
         tools:ignore="MissingConstraints" />
