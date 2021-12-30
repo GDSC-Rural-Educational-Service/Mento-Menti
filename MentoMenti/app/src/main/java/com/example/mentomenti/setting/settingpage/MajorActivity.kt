@@ -42,6 +42,13 @@ class MajorActivity : AppCompatActivity() {
     }
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         // Handle presses on the action bar items
+        val id = item.itemId
+        when (id) {
+            android.R.id.home -> {
+                finish()
+                return true
+            }
+        }
         var map = mutableMapOf<String, Any>()
         map["major"] = input1.text.toString()
         when(item.itemId){
