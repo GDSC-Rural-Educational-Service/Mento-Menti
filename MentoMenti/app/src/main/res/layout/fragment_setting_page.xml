@@ -36,7 +36,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
-        android:background="#68A9C6"
+        android:background="@drawable/radius2"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -47,7 +47,8 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:padding="10dp"
-            android:weightSum="3">
+            android:weightSum="3"
+            android:background="@drawable/bottom_border">
 
             <TextView
                 android:layout_width="0dp"
@@ -132,9 +133,12 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:padding="15dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout4">
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout4"
+            android:background="@drawable/edittext_rounded_corner_rectangle">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -158,9 +162,13 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:padding="15dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tanDanJi">
+            app:layout_constraintTop_toBottomOf="@+id/tanDanJi"
+            android:background="@drawable/edittext_rounded_corner_rectangle">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -184,8 +192,12 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:padding="15dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/water">
+            app:layout_constraintTop_toBottomOf="@+id/water"
+            android:background="@drawable/edittext_rounded_corner_rectangle">
 
             <TextView
                 android:layout_width="wrap_content"

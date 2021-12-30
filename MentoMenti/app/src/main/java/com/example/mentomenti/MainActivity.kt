@@ -29,6 +29,9 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         auth = Firebase.auth
+        supportActionBar?.title = "Mentor - Mentee"
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_baseline_all_inclusive_24)
         if (auth?.currentUser != null) {
             Log.d(ContentValues.TAG,"dhkt"+ auth?.currentUser!!.email);
         }
