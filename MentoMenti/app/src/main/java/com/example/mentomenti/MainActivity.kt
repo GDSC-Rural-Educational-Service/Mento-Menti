@@ -38,16 +38,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(view)
         changeFragment(MatchingPage)
         initNavigationBar()
-        val preferences = getSharedPreferences("firstCheck", MODE_PRIVATE)
-        var editor = preferences.edit()
-        var firstViewShow : Boolean = preferences.getBoolean("first", false)
-
-
-        if (!firstViewShow) {
-             editor.putBoolean("first",true).apply()
-            var firstIntent = Intent(applicationContext, SignInActivity::class.java)
-            startActivity(firstIntent)
-        }
     }
 
     private fun initNavigationBar(){
