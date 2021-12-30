@@ -39,10 +39,7 @@ class SettingPage : Fragment() {
         super.onCreate(savedInstanceState)
 
         auth = Firebase.auth
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
+
         currentUser = auth?.currentUser!!.email.toString()
     }
 
@@ -62,32 +59,29 @@ class SettingPage : Fragment() {
         var pextrance = v.findViewById<TextView>(R.id.recokcal)
 
         var me = db.collection("mentoinfo").document(currentUser)
-        Log.d(TAG, "o" + me.toString())
+        Log.d(TAG, "hello" + me.toString())
+        me.addSnapshotListener(EventListener<DocumentSnapshot>{ snapshot, e->
+            if(snapshot!= null && snapshot.exists()){
+                Log.d(TAG, "kk"+me.toString())
+                pcollege.text = snapshot.data!!["college"].toString()
+                pmajor.text = snapshot.data!!["major"].toString()
+                pextrance.text = snapshot.data!!["way"].toString()
+                name.text = snapshot.data!!["name"].toString()
+            }
+        })
+
+        me = db.collection("mentiinfo").document(currentUser)
+        Log.d(TAG, "dd"+ me.toString())
         if(me != null){
             me.addSnapshotListener(EventListener<DocumentSnapshot>{ snapshot, e->
                 if(snapshot!= null && snapshot.exists()){
-                    Log.d(TAG, "kk"+me.toString())
+                    Log.d(TAG, "ss" + me.toString())
                     pcollege.text = snapshot.data!!["college"].toString()
                     pmajor.text = snapshot.data!!["major"].toString()
                     pextrance.text = snapshot.data!!["way"].toString()
                     name.text = snapshot.data!!["name"].toString()
                 }
             })
-        }
-        else{
-            me = db.collection("mentiinfo").document(currentUser)
-            Log.d(TAG, "dd"+ me.toString())
-            if(me != null){
-                me.addSnapshotListener(EventListener<DocumentSnapshot>{ snapshot, e->
-                    if(snapshot!= null && snapshot.exists()){
-                        Log.d(TAG, "ss" + me.toString())
-                        pcollege.text = snapshot.data!!["college"].toString()
-                        pmajor.text = snapshot.data!!["major"].toString()
-                        pextrance.text = snapshot.data!!["way"].toString()
-                        name.text = snapshot.data!!["name"].toString()
-                    }
-                })
-            }
         }
         college.setOnClickListener {
             val intent = Intent(context, CollegeActivity::class.java)
