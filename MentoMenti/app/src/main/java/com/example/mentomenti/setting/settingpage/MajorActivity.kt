@@ -54,12 +54,9 @@ class MajorActivity : AppCompatActivity() {
         when(item.itemId){
             R.id.fixActionBtn -> {
                 var me = db.collection("mentoinfo").document(currentUser)
-                if(me != null) {
-                    db.collection("mentoinfo").document(currentUser).update(map)
-                }
-                else{
-                    db.collection("mentiinfo").document(currentUser).update(map)
-                }
+                db.collection("mentoinfo").document(currentUser).update(map)
+                me = db.collection("mentiinfo").document(currentUser)
+                db.collection("mentiinfo").document(currentUser).update(map)
                 finish()
             }}
         return super.onOptionsItemSelected(item)
