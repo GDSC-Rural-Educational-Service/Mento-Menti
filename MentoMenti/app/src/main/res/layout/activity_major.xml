@@ -13,7 +13,7 @@
         android:layout_marginTop="40dp"
         android:layout_marginLeft="10dp"
         android:textSize="25dp"
-        android:text="목표 학과"
+        android:text="목표 학과 :"
         android:textStyle="bold"
         android:textColor="@color/black"
         android:layout_weight="2"/>
